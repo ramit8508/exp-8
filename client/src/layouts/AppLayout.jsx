@@ -1,4 +1,4 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../features/auth/AuthContext";
 
 export const AppLayout = () => {
@@ -14,11 +14,18 @@ export const AppLayout = () => {
     <div className="app-shell">
       <header className="topbar">
         <Link to="/" className="brand">
-          JWT Auth Demo
+          VaultRoute
         </Link>
         <nav className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/dashboard">Dashboard</Link>
+          <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+            Home
+          </NavLink>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+          >
+            Dashboard
+          </NavLink>
         </nav>
         <div className="topbar-right">
           {user ? <span className="badge">{user.email}</span> : null}

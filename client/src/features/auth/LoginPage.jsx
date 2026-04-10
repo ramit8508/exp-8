@@ -34,8 +34,12 @@ export const LoginPage = () => {
   };
 
   return (
-    <section className="auth-wrap card">
-      <h2>Login</h2>
+    <section className="auth-wrap card fade-in">
+      <div className="auth-head">
+        <p className="kicker">Welcome Back</p>
+        <h2>Sign in to continue</h2>
+        <p className="subtle">Use the credentials linked to your account.</p>
+      </div>
       <form className="stack" onSubmit={onSubmit}>
         <label>
           Email
@@ -56,7 +60,7 @@ export const LoginPage = () => {
           {loading ? "Signing in..." : "Sign in"}
         </button>
       </form>
-      <p>
+      <p className="auth-footnote">
         Need an account? <Link to="/register">Register</Link>
       </p>
     </section>

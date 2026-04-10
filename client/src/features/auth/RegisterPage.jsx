@@ -31,8 +31,12 @@ export const RegisterPage = () => {
   };
 
   return (
-    <section className="auth-wrap card">
-      <h2>Create account</h2>
+    <section className="auth-wrap card fade-in">
+      <div className="auth-head">
+        <p className="kicker">Get Started</p>
+        <h2>Create your account</h2>
+        <p className="subtle">It takes less than a minute to unlock the dashboard.</p>
+      </div>
       <form className="stack" onSubmit={onSubmit}>
         <label>
           Name
@@ -58,7 +62,7 @@ export const RegisterPage = () => {
           {loading ? "Creating account..." : "Register"}
         </button>
       </form>
-      <p>
+      <p className="auth-footnote">
         Already registered? <Link to="/login">Login</Link>
       </p>
     </section>
